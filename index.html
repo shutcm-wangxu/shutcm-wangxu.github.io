@@ -3,31 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>黑客帝国数字雨效果</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wang Lab - 智能医疗与生物信息学课题组</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <canvas id="matrix"></canvas>
-    
-    <div class="matrix-title">
-        <div>欢迎来到</div>
-        <div>黑客帝国</div>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">Wang Lab</div>
+            <div class="hamburger">☰</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">主页</a></li>
+                    <li><a href="members.html">成员介绍</a></li>
+                    <li><a href="publications.html">工作成果</a></li>
+                    <li><a href="news.html">新闻动态</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主页 Banner/Hero -->
+    <div class="hero">
+        <div class="container">
+            <h1>欢迎访问智能医疗与生物信息学课题组</h1>
+            <p>Welcome to Intelligent Healthcare & Bioinformatics Group</p>
+        </div>
     </div>
 
-    <div class="controls">
-        <input class="control-input" id="custom-text" type="text" value="GZDlab loves everyone" />
-        <button class="control-btn" onclick="toggleSpeed()">切换速度</button>
-        <button class="control-btn" onclick="toggleFullscreen()">全屏模式</button>
-        <button class="control-btn" onclick="resetMatrix()">重置效果</button>
-    </div>
+    <main class="container">
+        <!-- 课题组简介 -->
+        <section id="intro">
+            <h2>课题组简介</h2>
+            <p>
+                本课题组依托上海中医药大学，致力于结合人工智能技术与传统中医药数据，探索生命科学的奥秘。
+                我们的研究方向主要包括：生物医学大数据分析、药物靶点预测、中医智能诊断算法等。
+                （此处可替换为更详细的介绍文字，描述实验室的愿景、核心研究领域等。）
+            </p>
+        </section>
 
-    <div class="custom-message" id="custom-message">GZDlab loves everyone</div>
+        <!-- 近期进展 (仅显示最新的3条) -->
+        <section id="recent-news">
+            <h2>近期科研进展</h2>
+            <div class="news-preview-list">
+                <div class="news-item">
+                    <span class="news-date">2023-12-15</span>
+                    <h3><a href="news.html">课题组在 Bioinformatics 期刊发表最新研究成果</a></h3>
+                    <p>我们提出了一种新的深度学习模型，显著提高了蛋白质相互作用预测的准确率...</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2023-10-01</span>
+                    <h3><a href="news.html">祝贺李四同学获得国家奖学金</a></h3>
+                    <p>因在科研工作中的突出表现，硕士研究生李四荣获本年度国家奖学金。</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2023-09-10</span>
+                    <h3><a href="news.html">课题组获批国家自然科学基金面上项目</a></h3>
+                    <p>项目名称：《基于知识图谱的中药复方作用机制研究》，资助金额...</p>
+                </div>
+            </div>
+            <a href="news.html" class="btn">查看更多动态 &rarr;</a>
+        </section>
+    </main>
 
-    <!-- JS 模块按依赖顺序加载 -->
-    <script src="js/config.js"></script>
-    <script src="js/rain.js"></script>
-    <script src="js/controls.js"></script>
-    <script src="js/events.js"></script>
-    <script src="js/main.js"></script>
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2023</span> Wang Lab, Shanghai University of Traditional Chinese Medicine.</p>
+            <p>地址：上海市浦东新区蔡伦路1200号 | 联系邮箱：contact@example.com</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

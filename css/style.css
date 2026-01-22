@@ -1,0 +1,260 @@
+/* 全局变量定义 */
+:root {
+    --primary-color: #003366; /* 学术深蓝 */
+    --accent-color: #dcae1d;  /* 点缀色，如金色 */
+    --text-color: #333333;
+    --light-bg: #f4f4f4;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-height: 60px;
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 布局容器 */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部导航 */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--white);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* 主内容区 */
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+h2 {
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 10px;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #002244;
+}
+
+/* 页脚 */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- 页面特定样式 --- */
+
+/* 首页 Hero */
+.hero {
+    background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('../assets/images/hero-bg.jpg'); /* 需替换背景图 */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+.news-preview-list .news-item {
+    background: var(--light-bg);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 成员页 Grid */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.member-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd; /* 占位色 */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    object-fit: cover;
+}
+
+.member-role {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* 成果页列表 */
+.publication-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.pub-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.pub-authors {
+    color: #555;
+    display: block;
+}
+
+.pub-journal {
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+/* 新闻列表 */
+.news-list .news-item {
+    margin-bottom: 30px;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
