@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑客帝国数字雨效果</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    
+    <div class="matrix-title">
+        <div>欢迎来到</div>
+        <div>黑客帝国</div>
+    </div>
+
+    <div class="controls">
+        <input class="control-input" id="custom-text" type="text" value="GZDlab loves everyone" />
+        <button class="control-btn" onclick="toggleSpeed()">切换速度</button>
+        <button class="control-btn" onclick="toggleFullscreen()">全屏模式</button>
+        <button class="control-btn" onclick="resetMatrix()">重置效果</button>
+    </div>
+
+    <div class="custom-message" id="custom-message">GZDlab loves everyone</div>
+
+    <!-- JS 模块按依赖顺序加载 -->
+    <script src="js/config.js"></script>
+    <script src="js/rain.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
